@@ -15,7 +15,7 @@ class KotlinSequenceApplicationTests {
 	@Test
 	void contextLoads() {
 		Person saved = persons.save(new Person(null, "Jens"));
-		Person reloaded = persons.findById(saved.id()).orElseThrow();
+		Person reloaded = persons.findById(saved.getId()).orElseThrow();
 
 		assertThat(reloaded).isEqualTo(saved);
 
