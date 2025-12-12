@@ -15,9 +15,13 @@ class KotlinSequenceApplicationTests {
 	@Test
 	void contextLoads() {
 		Person saved = persons.save(new Person(null, "Jens"));
+
+		assertThat(saved.getId()).isNotNull();
+
 		Person reloaded = persons.findById(saved.getId()).orElseThrow();
 
 		assertThat(reloaded).isEqualTo(saved);
+
 
 	}
 
